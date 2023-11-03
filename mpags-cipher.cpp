@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 using namespace std;
+
 int main(int argc, char* argv[])
 {
     const vector<string> cmdLineArgs {argv, argv+argc };
@@ -36,5 +37,56 @@ int main(int argc, char* argv[])
     if (!isKnownArgument) {
     cout << "\033[31m Unknown Argument.\033[0m" << endl;
     }
+
+    char in_char{'x'};
+  string out_str{""};
+cout << "\033[31m Enter Input: \033[0m" << endl;
+  // Take letter from input:
+  while(cin>>in_char)
+  {
+    if(isalpha(in_char))
+    {
+      out_str+=toupper(in_char);
+      continue;
+    }
+
+    switch (in_char)
+    {
+    case '0':
+      out_str+="ZERO";
+      break;
+    case '1':
+      out_str+="ONE";
+      break;
+    case '2':
+      out_str+="TWO";
+      break;
+    case '3':
+      out_str+="THREE";
+      break;
+    case '4':
+      out_str+="FOUR";
+      break;
+    case '5':
+      out_str+="FIVE";
+      break;
+    case '6':
+      out_str+="SIX";
+      break;
+    case '7':
+      out_str+="SEVEN";
+      break;
+    case '8':
+      out_str+="EIGHT";
+      break;
+    case '9':
+      out_str+="NINE";
+      break;
+    default:
+      break;
+    }
+  }
+  cout << out_str << endl;
+
     return 0;
 }
